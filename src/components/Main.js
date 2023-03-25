@@ -1,5 +1,6 @@
 import React from "react";
 import Aside from "./Aside";
+import Store from "./Store";
 
 class Main extends React.Component {
   render() {
@@ -8,7 +9,9 @@ class Main extends React.Component {
         <div className="container">
           <div className="main__row">
             <Aside />
-            <section className="store">alla</section>
+            <section className="store">
+              <Store />
+            </section>
           </div>
         </div>
       </main>
