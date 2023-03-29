@@ -7,6 +7,12 @@ import headerImg1 from "../img/header/img1.png";
 import headerImg2 from "../img/header/img2.png";
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cartOpen: false,
+    };
+  }
   render() {
     return (
       <header className="header">
@@ -30,7 +36,15 @@ class Header extends React.Component {
                 <FiSearch className="search-icon" />
               </div>
               <div className="header__cart">
-                <GiShoppingCart className="cart-icon" />
+                <GiShoppingCart
+                  onClick={() => {
+                    this.setState({ cartOpen: !this.state.cartOpen });
+                  }}
+                  className={`cart-icon ${this.state.cartOpen && "active"}`}
+                />
+                <div className="cart__item-quantity">1</div>
+
+                {this.state.cartOpen && <div className="cart__open"></div>}
               </div>
               <div className="header__login">
                 <a href="*" className="login__btn btn">
@@ -51,9 +65,11 @@ class Header extends React.Component {
                 trendy plants. Use our plants to create an unique Urban Jungle.
                 Order your favorite plants!
               </p>
-              <a href="*" className="header__btn btn">
-                shop now
-              </a>
+              <div>
+                <a href="*" className="header__btn btn">
+                  shop now
+                </a>
+              </div>
             </div>
             <div className="header__images">
               <img

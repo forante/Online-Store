@@ -18,13 +18,16 @@ class Footer extends React.Component {
               <p>70 West Buckingham Ave. Farmingdale, NY 11735</p>
             </div>
             <div className="footer_email footer__contacts">
-              <HiOutlineMail className="footer__icons"/>
+              <HiOutlineMail className="footer__icons" />
               <p>contact@greenshop.com</p>
             </div>
             <div className="footer_tel footer__contacts">
-              <BsTelephoneOutbound className="footer__icons"/>
+              <BsTelephoneOutbound className="footer__icons" />
               <p>+88 01911 717 490</p>
             </div>
+          </div>
+          <div className="footer__end">
+            <p>© 2023 GreenShop. All Rights Reserved.</p>
           </div>
         </div>
       </footer>

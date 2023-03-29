@@ -52,9 +52,11 @@ class Aside extends React.Component {
               <div>0-10</div>
             </label>
           </div>
-          <a href="*" className="filter__btn btn">
-            Filter
-          </a>
+          <div>
+            <a href="*" className="filter__btn btn">
+              Filter
+            </a>
+          </div>
         </div>
         <div className="filter__size">
           <h3>Size</h3>
