@@ -2,6 +2,7 @@ import React from "react";
 import Items from "./Items";
 
 class Store extends React.Component {
+
   render() {
     return (
       <section className="store">
@@ -12,11 +13,13 @@ class Store extends React.Component {
             <div className="sort__item">Sale</div>
           </div>
           <div className="store__items"></div>
-          <Items />
+          <Items items={this.props.items} onAdd={this.props.onAdd} />
         </div>
       </section>
     );
   }
+
+
 }
 
 export default Store;

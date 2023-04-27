@@ -5,6 +5,7 @@ import { GiShoppingCart } from "react-icons/gi";
 import { IoLogInOutline } from "react-icons/io5";
 import headerImg1 from "../img/header/img1.png";
 import headerImg2 from "../img/header/img2.png";
+import Order from "./Order";
 
 class Header extends React.Component {
   constructor(props) {
@@ -40,11 +41,25 @@ class Header extends React.Component {
                   onClick={() => {
                     this.setState({ cartOpen: !this.state.cartOpen });
                   }}
-                  className={`cart-icon ${this.state.cartOpen && "active"}`}
+                  className={`cart-icon ${this.state.cartOpen && "active"} ${
+                    this.props.orders.length === 0 && "cart-empty"
+                  }`}
                 />
                 <div className="cart__item-quantity">1</div>
 
-                {this.state.cartOpen && <div className="cart__open"></div>}
+                {this.state.cartOpen && (
+                  <div className="cart__open">
+                    {this.props.orders.length
+                      ? this.props.orders.map((elem) => (
+                          <Order
+                            key={elem.id}
+                            item={elem}
+                            onDelete={this.props.onDelete}
+                          />
+                        ))
+                      : "Добавьте товар в корзину"}
+                  </div>
+                )}
               </div>
               <div className="header__login">
                 <a href="*" className="login__btn btn">

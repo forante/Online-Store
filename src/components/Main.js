@@ -10,7 +10,10 @@ class Main extends React.Component {
           <div className="main__row">
             <Aside />
             <section className="store">
-              <Store />
+              <Store
+                items={this.props.items}
+                onAdd={this.props.onAdd}
+              />
             </section>
           </div>
         </div>

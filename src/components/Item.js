@@ -8,10 +8,8 @@ class Item extends React.Component {
     super(props);
     this.state = {
       position: false,
-      orders: [],
     };
     this.addStoreIcons = this.addStoreIcons.bind(this);
-    this.addToOrders = this.addToOrders.bind(this);
   }
   render() {
     return (
@@ -28,7 +26,7 @@ class Item extends React.Component {
           <img src={"./img/store/" + this.props.item.image} alt="foto" />
           <GiShoppingCart
             onClick={() => {
-              this.addToOrders(this.props.item);
+              this.props.onAdd(this.props.item);
             }}
             className={`store__cart store__icon ${
               this.state.position && "active"
@@ -53,11 +51,6 @@ class Item extends React.Component {
 
   addStoreIcons() {
     this.setState({ position: !this.state.position });
-  }
-
-  addToOrders(item) {
-    this.setState({ orders: [...this.state.orders, item] });
-    console.log(this.state.orders);
   }
 }
 
